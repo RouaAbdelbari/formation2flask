@@ -4,10 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Veuillez entrer un email valide.');
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert('Le mot de passe doit contenir au moins 6 caractères.');
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Les mots de passe ne correspondent pas.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body>
-    <h1>register page</h1>
-    <form action="/register" method="POST">
+    <h1>Register Page</h1>
+    <form action="{{ url_for('register') }}" method="POST" onsubmit="return validateForm();">
         <label for="first_name">Prénom:</label>
         <input type="text" id="first_name" name="first_name" required>
         <br>

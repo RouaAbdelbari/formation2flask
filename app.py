@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,13 +6,40 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/login')
+@app.route('/login', methods=['POST'])
 def login():
-    return render_template('login.html')
+    email = request.form.get('email')
+    password = request.form.get('password')
 
-@app.route('/register')
+    if not is_valid_email(email):
+        return "Veuillez entrer une adresse email valide."
+   
+    if not is_valid_password(password):
+        return "Le mot de passe doit contenir au moins 6 caractères."
+  
+    return "Connexion réussie !"
+
+@app.route('/register', methods=['POST'])
 def register():
-    return render_template('register.html')
+    email = request.form.get('email')
+    password = request.form.get('password')
 
-if __name__ =='__main__':
+    if not is_valid_email(email):
+        return "Veuillez entrer une adresse email valide."
+
+
+    if not is_valid_password(password):
+        return "Le mot de passe doit contenir au moins 6 caractères."
+    return "Inscription réussie !"
+
+def is_valid_email(email):
+   
+    return True
+
+def is_valid_password(password):
+   
+    return len(password) >= 6
+
+if __name__ == '__main__':
     app.run(debug=True)
+
