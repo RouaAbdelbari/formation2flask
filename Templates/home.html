@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
     <title>Home</title>
 </head>
 <body>
     <h1>Home </h1>
+    <div class="link-container">
     <a href="{{url_for('login')}}">Login page</a><br>
     <a href="{{url_for('register')}}">register page</a><br>
     <a href="{{url_for('show_users')}}">Users page</a><br>
+    </div>
 
 </body>
 </html>
