@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Register</title>
     <script>
         function validateForm() {
@@ -31,7 +32,7 @@
     </script>
 </head>
 <body>
-    <h1>Register Page</h1>
+    <h1>Register page </h1>
     <form action="{{ url_for('register') }}" method="POST" onsubmit="return validateForm();">
         <label for="first_name">Prénom:</label>
         <input type="text" id="first_name" name="first_name" required>
@@ -50,5 +51,6 @@
         <br>
         <input type="submit" value="S'inscrire">
     </form> 
-</body>
-</html>
+        
+    </body>
+    
