@@ -13,6 +13,7 @@ h1 {
   color: purple;
   text-align: center;
   font-family:Georgia, 'Times New Roman', Times, serif;
+  
 }
 
 form {
@@ -21,7 +22,7 @@ form {
   padding: 30px; 
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9; /* Ajoutez une couleur d'arrière-plan */
+  background-color: #f9f9f9; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
@@ -34,7 +35,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 12px; /* Augmentez la taille de la police et l'espacement interne */
+  padding: 12px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -45,19 +46,26 @@ input[type="submit"] {
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 12px 20px; /* Augmentez la taille du bouton */
+  padding: 12px 20px; 
   cursor: pointer;
 }
 
 input[type="submit"]:hover {
   background-color: #0056b3;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre douce au survol */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 .link-container a {
-  margin-right: 20px; /* Espacement horizontal entre les liens */
+  margin-right: 20px; 
   color: #007bff;
   text-decoration: none;
   font-size: 18px;
+}
+.user-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
 }
 
 .error-message {
